@@ -41,8 +41,6 @@ twentyOne.dealCards = () => {
             let player2Score = twentyOne.getCardValue(p2c1) + twentyOne.getCardValue(p2c2);
             let player3Score = twentyOne.getCardValue(p3c1) + twentyOne.getCardValue(p3c2);
 
-            console.log(player1Score);
-
             if (player1Score > player2Score && player1Score > player3Score) {
                 // append html
             } else if (player2Score > player1Score && player2Score > player3Score) {
