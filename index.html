@@ -9,11 +9,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Kiwi+Maru:wght@300;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./styles/style.css">
 </head>
-
 <body>
-    
+    <main>
+        <section class="gameBoard" id="gameBoard">
+            <div class="topBoard">
+                <div class="instructions">
+                    <div class="title">
+                        <div class="suitsPic">
+                            <img src="./assets/1063_4suits_sh.png" alt="the card suits spades and hearts symbols">
+                        </div>
+                        <h1>twenty one</h1>
+                        <div class="suitsPic">
+                            <img src="./assets/1063_4suits_cd.png" alt="the card suits clubs and diamonds symbols">
+                        </div>
+                    </div>
+                    <p>Click the deck to start!</p>
+                </div>
+                <div class="cardsToDeal" id="cardstoDeal">
+                    <button class="button1">
+                        <img class="backDeck" src="./assets/IMG_9207.PNG" alt="the back of the deck of cards is blue with a pair of snowflakes in the top left and bottom right corners, with the text robort32 in the centre">
+                    </button>
+                </div>
+                <div class="reset">
+                    <button class="button2">
+                        <p>reset</p>
+                    </button>
+                </div>
+            </div>
+            <div class="playingArea" id="playingArea">
+                <div class="player1" id="player1">
+                    <!-- html to be appended -->
+                </div>
+                <div class="player2" id="player2">
+                    <!-- html to be appended -->
+                </div>
+                <div class="player3" id="player3">
+                    <!-- html to be appended -->
+                </div>
+            </div>
+        </section>
+    </main>
+    <footer>
+        <div class="footnotes">
+            <a href="https://junocollege.com/">Created at Juno College by Dana McIvor & Stephen Schooley</a>
+            <a href="">This product uses the Deck of Cards API</a>
+        </div>
+    </footer>
+    <script src="./script/script.js"></script>
 </body>
-
-<script src="./script/script.js"></script>
-
 </html>

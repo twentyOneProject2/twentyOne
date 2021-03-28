@@ -8,4 +8,121 @@ html { -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: 
 
 .sr-only { position: absolute; width: 1px; height: 1px; margin: -1px; border: 0; padding: 0; white-space: nowrap; clip-path: inset(100%); clip: rect(0 0 0 0); overflow: hidden;}
 
-/* font-family: 'Kiwi Maru', serif; */
+
+body {
+    font-family: 'Kiwi Maru', serif;
+    font-size: 125%;
+}
+
+main {
+    background-color: #076324;
+    width: 100vw;
+    height: 90vh;
+}
+
+h1{
+    font-weight: 500;
+    font-size: 1.6rem;
+    color: #ffffff;
+    text-transform: uppercase;
+    padding: 5px;
+    margin: 0;
+    text-align: center;
+}
+
+p {
+    font-weight: 300;
+    font-size: 1rem;
+    color: #ffffff;
+    text-align: center;
+}
+
+img {
+    width: 100%;
+    height: auto;
+}
+
+.suitsPic {
+    width: 50px;
+}
+
+.button1 {
+    background-color: #076324;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.backDeck {
+    width: 150px;
+    height: 230px;
+    margin: 0;
+    padding: 0;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.button2 {
+    background: #000000;
+    color: #ffffff;
+    border-radius: 10px;
+    cursor: pointer;
+    text-transform: uppercase;
+    width: 80px;
+}
+
+.topBoard {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.instructions,
+.cardsToDeal, 
+.reset {
+    width: calc(100% / 3);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding-top: 15px;
+}
+
+.title {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+}
+
+.playingArea {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+
+footer {
+    background: black;
+    width: 100vw;
+    height: 75px;
+}
+
+.footnotes {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+}
+
+a {
+    font-family: 'Kiwi Maru', serif;
+    font-weight: 300;
+    font-size: 20px;
+    color: #ffffff;
+    text-align: center;
+}
