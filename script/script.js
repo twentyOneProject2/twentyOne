@@ -1,24 +1,60 @@
-// start with deck of cards
-    // html button on card back, event handler
+const twentyOne = {};
+twentyOne.url = "https://deckofcardsapi.com/api/deck/new/draw/?count=6";
+twentyOne.getCardValue = (card) => {
+    if (card.value === "ACE") {
+        card.value = 11
+    } else if (card.value === "JACK" || card.value === "QUEEN" || card.value === "KING") {
+                card.value = 10
+    } else {
+        card.value = card.value * 1
+    };
+    return card.value
+}
 
-// click deck of cards to deal individual cards to 3 players twice
-    // click calls api
-    // return array of 6 random cards
-    // assign 2 cards to each player
-    // get image from array
+twentyOne.assignImages = (imgId, imgUrl, imgValue, imgSuit) => {
+    let cardImg = document.getElementById(`${imgId}`)
+    cardImg.innerHTML = `<img src = ${imgUrl} alt = ${imgValue} of ${imgSuit}`;
+}
 
-// add card images to designated empty pockets
-    // assign to image tags in html
+twentyOne.init = () => {
+    document.querySelector("whateverthecardsare").addEventListener("click", twentyOne.dealCards())
+};
 
-// calculate the combined values of the 2 cards for each player
-    // function to get value of cards - property of objects in array
-    // combine the 2 card values
+twentyOne.dealCards = 
+    fetch(twentyOne.url)  
+        .then( (res) => {
+            return res.json();
+        })
+        .then( (cardData) => {
+            const cardsArray = cardData.cards;
+            let p1c1 = cardsArray[0];
+            let p1c2 = cardsArray[1];
+            let p2c1 = cardsArray[2];
+            let p2c2 = cardsArray[3];
+            let p3c1 = cardsArray[4];
+            let p3c2 = cardsArray[5];
 
-// compare the total values for the players
-    // function to find highest value
+            twentyOne.cardImg("ID", p1c1.image, p1c1.value, p1c1.suit);
+            twentyOne.cardImg("ID", p1c2.image, p1c2.value, p1c2.suit);
+            twentyOne.cardImg("ID", p2c1.image, p2c1.value, p2c1.suit);
+            twentyOne.cardImg("ID", p2c2.image, p2c2.value, p2c2.suit);
+            twentyOne.cardImg("ID", p3c1.image, p3c1.value, p3c1.suit);
+            twentyOne.cardImg("ID", p3c2.image, p3c2.value, p3c2.suit);
 
-// add indication of winner
-    // append html for player with highest score to indicate winner (css animation?)
+            let player1Score = twentyOne.getCardValue(p1c1) + twentyOne.getCardValue(p1c2);
+            let player2Score = twentyOne.getCardValue(p2c1) + twentyOne.getCardValue(p2c2);
+            let player3Score = twentyOne.getCardValue(p3c1) + twentyOne.getCardValue(p3c2);
 
-// player can click reset to clear
-// repeat :)
+            if (player1Score > player2Score && player1Score > player3Score) {
+                // append html
+            } else if (player2Score > player1Score && player2Score > player3Score) {
+                // append html
+            } else if (player3Score > player1Score && player3Score > player2Score) {
+                // append html
+            } else {
+                // append html to tie
+            }
+
+        });
+
+twentyOne.init();
