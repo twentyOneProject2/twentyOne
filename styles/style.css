@@ -116,9 +116,27 @@ img {
     align-items: center;
 }
 
-.winner {
+.winner1{
     padding: 20px 0;
     opacity: 0.5;
+    display: none;
+}
+
+.winner2{
+    padding: 20px 0;
+    opacity: 0.5;
+    display: none;
+}
+
+.winner3 {
+    padding: 20px 0;
+    opacity: 0.5;
+    display: none;
+}
+
+.tie {
+    opacity: 0.5;
+    display: none;
 }
 
 footer {
