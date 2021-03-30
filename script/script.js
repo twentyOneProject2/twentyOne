@@ -12,9 +12,10 @@ twentyOne.getCardValue = (card) => {
     return card.value
 }
 // select img area and assign the src url and alt text
-// twentyOne.assignImage = (imgId, imgUrl, imgValue, imgSuit) => {
-//     document.getElementById(`${imgId}`).innerHTML = `<img src = ${imgUrl} alt = ${imgValue} of ${imgSuit}`;
-// }
+twentyOne.assignImage = (imgId, imgUrl, imgValue, imgSuit) => {
+    let image = document.getElementById(`${imgId}`)
+    image.innerHTML = `<img src = ${imgUrl} alt = ${imgValue} of ${imgSuit}>`
+}
 
 twentyOne.dealCards = () => {
     fetch(twentyOne.url)  
@@ -30,12 +31,12 @@ twentyOne.dealCards = () => {
             let p3c1 = cardsArray[4];
             let p3c2 = cardsArray[5];
 
-            // twentyOne.assignImage(player1Card1, p1c1.image, p1c1.value, p1c1.suit);
-            // twentyOne.assignImage(player1Card2, p1c2.image, p1c2.value, p1c2.suit);
-            // twentyOne.assignImage(player2Card1, p2c1.image, p2c1.value, p2c1.suit);
-            // twentyOne.assignImage(player2Card2, p2c2.image, p2c2.value, p2c2.suit);
-            // twentyOne.assignImage(player3Card1, p3c1.image, p3c1.value, p3c1.suit);
-            // twentyOne.assignImage(player3Card2, p3c2.image, p3c2.value, p3c2.suit);
+            twentyOne.assignImage('player1Card1', p1c1.image, p1c1.value, p1c1.suit);
+            twentyOne.assignImage('player1Card2', p1c2.image, p1c2.value, p1c2.suit);
+            twentyOne.assignImage('player2Card1', p2c1.image, p2c1.value, p2c1.suit);
+            twentyOne.assignImage('player2Card2', p2c2.image, p2c2.value, p2c2.suit);
+            twentyOne.assignImage('player3Card1', p3c1.image, p3c1.value, p3c1.suit);
+            twentyOne.assignImage('player3Card2', p3c2.image, p3c2.value, p3c2.suit);
 
             let player1Score = twentyOne.getCardValue(p1c1) + twentyOne.getCardValue(p1c2);
             let player2Score = twentyOne.getCardValue(p2c1) + twentyOne.getCardValue(p2c2);
