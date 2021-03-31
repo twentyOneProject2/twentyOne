@@ -38,6 +38,7 @@ twentyOne.reset = () => {
 }
 
 twentyOne.dealCards = () => {
+    twentyOne.reset();
     fetch(twentyOne.url)  
         .then( (res) => {
             return res.json();
