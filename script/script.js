@@ -11,13 +11,39 @@ twentyOne.getCardValue = (card) => {
     };
     return card.value
 }
+
 // select img area and assign the src url and alt text
 twentyOne.assignImage = (imgId, imgUrl, imgValue, imgSuit) => {
+<<<<<<< HEAD
+   let image = document.getElementById(`${imgId}`)
+   image.innerHTML = `<img src = ${imgUrl} alt = ${imgValue} of ${imgSuit}>`
+}
+
+twentyOne.reset = () => {
+    document.querySelector(".winner1").style.opacity = "0";
+    document.querySelector(".winner2").style.opacity = "0";
+    document.querySelector(".winner3").style.opacity = "0";
+    document.querySelector(".tie").style.opacity = "0";
+    document.querySelector(".button2").style.opacity = "0.5";
+    const clearArray = ['player1Card1', 'player1Card2', 'player2Card1', 'player2Card2', 'player3Card1', 'player3Card2',]
+    clearArray.forEach(thing => {
+        let blank = document.getElementById(thing)
+        blank.innerHTML = "";
+    document.querySelector("#player1Card1").style.opacity = "1";
+    document.querySelector("#player1Card2").style.opacity = "1";
+    document.querySelector("#player2Card1").style.opacity = "1";
+    document.querySelector("#player2Card2").style.opacity = "1";
+    document.querySelector("#player3Card1").style.opacity = "1";
+    document.querySelector("#player3Card2").style.opacity = "1";
+    } )
+=======
     let image = document.getElementById(`${imgId}`)
     image.innerHTML = `<img src = ${imgUrl} alt = ${imgValue} of ${imgSuit}>`
+>>>>>>> main
 }
 
 twentyOne.dealCards = () => {
+    twentyOne.reset();
     fetch(twentyOne.url)  
         .then( (res) => {
             return res.json();
@@ -45,13 +71,41 @@ twentyOne.dealCards = () => {
             twentyOne.determineWinner = () => {
             if (player1Score > player2Score && player1Score > player3Score) {
                 document.querySelector(".winner1").style.opacity = "1";
+                document.querySelector("#player2Card1").style.opacity = "0.5";
+                document.querySelector("#player2Card2").style.opacity = "0.5";
+                document.querySelector("#player3Card1").style.opacity = "0.5";
+                document.querySelector("#player3Card2").style.opacity = "0.5";
+
+                let loserArray = ["#player2Card1", "#player2Card2", "#player3Card1", "#player3Card2"]
+                loserArray.forEach = (loser) => {
+                document.querySelector(loser).style.opacity = "0.5";
+                }
             } else if (player2Score > player1Score && player2Score > player3Score) {
                 document.querySelector(".winner2").style.opacity = "1";
+                document.querySelector("#player1Card1").style.opacity = "0.5";
+                document.querySelector("#player1Card2").style.opacity = "0.5";
+                document.querySelector("#player3Card1").style.opacity = "0.5";
+                document.querySelector("#player3Card2").style.opacity = "0.5";
             } else if (player3Score > player1Score && player3Score > player2Score) {
                 document.querySelector(".winner3").style.opacity = "1";
+                document.querySelector("#player1Card1").style.opacity = "0.5";
+                document.querySelector("#player1Card2").style.opacity = "0.5";
+                document.querySelector("#player2Card1").style.opacity = "0.5";
+                document.querySelector("#player2Card2").style.opacity = "0.5";
             } else {
                 document.querySelector(".tie").style.opacity = "1";
+                if (player1Score === player2Score) {
+                    document.querySelector("#player3Card1").style.opacity = "0.5";
+                    document.querySelector("#player3Card2").style.opacity = "0.5";
+                } else if (player1Score === player3Score) {
+                    document.querySelector("#player2Card1").style.opacity = "0.5";
+                    document.querySelector("#player2Card2").style.opacity = "0.5";
+                } else {
+                    document.querySelector("#player1Card1").style.opacity = "0.5";
+                    document.querySelector("#player1Card2").style.opacity = "0.5";
+                }
             }
+            document.querySelector(".button2").style.opacity = "1"
         }
 
         twentyOne.determineWinner();
@@ -61,6 +115,7 @@ twentyOne.dealCards = () => {
 
 twentyOne.init = () => {
     document.querySelector(".cardsToDeal").addEventListener("click", twentyOne.dealCards)
+    document.querySelector(".button2").addEventListener("click", twentyOne.reset)
 };
 
 twentyOne.init();
