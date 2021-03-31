@@ -14,7 +14,6 @@ twentyOne.getCardValue = (card) => {
 
 // select img area and assign the src url and alt text
 twentyOne.assignImage = (imgId, imgUrl, imgValue, imgSuit) => {
-<<<<<<< HEAD
    let image = document.getElementById(`${imgId}`)
    image.innerHTML = `<img src = ${imgUrl} alt = ${imgValue} of ${imgSuit}>`
 }
@@ -36,10 +35,7 @@ twentyOne.reset = () => {
     document.querySelector("#player3Card1").style.opacity = "1";
     document.querySelector("#player3Card2").style.opacity = "1";
     } )
-=======
-    let image = document.getElementById(`${imgId}`)
-    image.innerHTML = `<img src = ${imgUrl} alt = ${imgValue} of ${imgSuit}>`
->>>>>>> main
+
 }
 
 twentyOne.dealCards = () => {
