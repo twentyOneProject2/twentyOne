@@ -54,11 +54,11 @@ twentyOne.dealCards = () => {
             let p3c2 = cardsArray[5];
 
             twentyOne.assignImage('player1Card1', p1c1.image, p1c1.value, p1c1.suit);
-            twentyOne.assignImage('player1Card2', p1c2.image, p1c2.value, p1c2.suit);
-            twentyOne.assignImage('player2Card1', p2c1.image, p2c1.value, p2c1.suit);
-            twentyOne.assignImage('player2Card2', p2c2.image, p2c2.value, p2c2.suit);
-            twentyOne.assignImage('player3Card1', p3c1.image, p3c1.value, p3c1.suit);
-            twentyOne.assignImage('player3Card2', p3c2.image, p3c2.value, p3c2.suit);
+            setTimeout(function() {twentyOne.assignImage('player1Card2', p1c2.image, p1c2.value, p1c2.suit);}, 400)
+            setTimeout(function() {twentyOne.assignImage('player2Card1', p2c1.image, p2c1.value, p2c1.suit);}, 800)
+            setTimeout(function() {twentyOne.assignImage('player2Card2', p2c2.image, p2c2.value, p2c2.suit);}, 1200)
+            setTimeout(function() {twentyOne.assignImage('player3Card1', p3c1.image, p3c1.value, p3c1.suit);}, 1600)
+            setTimeout(function() {twentyOne.assignImage('player3Card2', p3c2.image, p3c2.value, p3c2.suit);}, 2000)
 
             let player1Score = twentyOne.getCardValue(p1c1) + twentyOne.getCardValue(p1c2);
             let player2Score = twentyOne.getCardValue(p2c1) + twentyOne.getCardValue(p2c2);
@@ -104,8 +104,10 @@ twentyOne.dealCards = () => {
             document.querySelector(".button2").style.opacity = "1"
         }
 
-        twentyOne.determineWinner();
-
+        winnerTimeout = () => {
+        let winTime = setTimeout(twentyOne.determineWinner, 2800);
+        }
+        winnerTimeout();
         })
     };
 
